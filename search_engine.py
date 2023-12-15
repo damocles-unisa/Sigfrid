@@ -1,6 +1,6 @@
 import random
 
-class PatternMatching(object):
+class Detector(object):
 
     def __init__(self, G):
         self.G = G
