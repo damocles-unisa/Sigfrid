@@ -246,9 +246,3 @@ if __name__ == '__main__':
           len(multi_trigger_activation_interferences))
 
     rule_graph.draw_graph(700, 5.6)
-interferences))
-    print('Trigger Block Interferences:', trigger_block_interferences, ', Count:', len(trigger_block_interferences))
-    print('Multi Trigger Activation Interferences:', multi_trigger_activation_interferences, ', Count:',
-          len(multi_trigger_activation_interferences))
-
-    rule_graph.draw_graph(700, 5.6)
