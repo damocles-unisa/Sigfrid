@@ -1,5 +1,5 @@
-from PatternSearch.scene_interaction_graph import SceneInteractionGraph
-from PatternSearch.search_engine import PatternMatching
+from scene_interaction_graph import SceneInteractionGraph
+from search_engine import PatternMatching
 from utils_ChatGPT import *
 import pandas as pd
 
