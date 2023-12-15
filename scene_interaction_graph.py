@@ -106,6 +106,3 @@ class SceneInteractionGraph(object):
                 self.rule_chaining_edges.append(([first_node_name, second_node_name]))
             case _:
                 raise ValueError('Unrecognized relation')
-
-n')
-
