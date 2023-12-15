@@ -222,7 +222,7 @@ if __name__ == '__main__':
                         elif qa_engine.get_answer_relation(action_desc, action_desc_2, 'ACTION_BLOCK') == 'Yes':
                             rule_graph.add_edge(action_id, action_id_2, 'action_block')
 
-    pattern_engine = PatternMatching(rule_graph)
+    pattern_engine = Detector(rule_graph)
 
     action_block_interferences = pattern_engine.getSubgraphs_action_conflict_block_duplicate('action_block')
     action_conflict_interferences = pattern_engine.getSubgraphs_action_conflict_block_duplicate('action_conflict')
