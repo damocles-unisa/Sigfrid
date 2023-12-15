@@ -96,7 +96,7 @@ class Detector(object):
             else:  
                 trigger_node_visited.add(node)
                 
-                edges = self.G.get_node_out_labeled_edges(node, 'trigger-action')
+                edges = self.G.get_node_out_labeled_edges(node, 'trigger_action')
                 for edge in edges:
                     stack.append((edge[1], path[:]))
 
@@ -107,8 +107,8 @@ class Detector(object):
         trigger_node_visited = set()
         action_revert_interferences = []
         for edge in action_conflict_edges:
-            trigger_first_action = self.G.get_node_in_labeled_edges(edge[0], 'trigger-action')
-            trigger_second_action = self.G.get_node_in_labeled_edges(edge[1], 'trigger-action')
+            trigger_first_action = self.G.get_node_in_labeled_edges(edge[0], 'trigger_action')
+            trigger_second_action = self.G.get_node_in_labeled_edges(edge[1], 'trigger_action')
             if trigger_first_action and trigger_second_action:
                 if trigger_first_action[0][0] not in trigger_node_visited:
                     action_revert_interferences.append(self.__tap_dfs_revert(trigger_first_action[0][0]))
@@ -148,7 +148,7 @@ class Detector(object):
                         stack.append((neighbor, path[:]))
             else:  
                 trigger_node_visited.add(node)
-                edges = self.G.get_node_out_labeled_edges(node, 'trigger-action')
+                edges = self.G.get_node_out_labeled_edges(node, 'trigger_action')
                 for edge in edges:
                     stack.append((edge[1], path[:]))
 
@@ -168,9 +168,9 @@ class Detector(object):
                 edge_tuple = (first_node_name, second_node_name)
                 subgraph.append(edge_tuple)
 
-                first_node_in_labeled_edges_trac = self.G.get_node_in_labeled_edges(first_node_name, 'trigger-action') 
+                first_node_in_labeled_edges_trac = self.G.get_node_in_labeled_edges(first_node_name, 'trigger_action') 
 
-                second_node_out_labeled_edges_trac = self.G.get_node_out_labeled_edges(second_node_name, 'trigger-action') 
+                second_node_out_labeled_edges_trac = self.G.get_node_out_labeled_edges(second_node_name, 'trigger_action') 
                 first_node_in_labeled_edges_trandac = self.G.get_node_in_labeled_edges(first_node_name, 'andaction')
                 
                 second_node_out_labeled_edges_trandac = self.G.get_node_out_labeled_edges(second_node_name, 'triggerand')
@@ -230,7 +230,7 @@ class Detector(object):
 
                 for rule_chaining in rule_chaining_edges:
                     action_node = rule_chaining[0]
-                    action_node_in_labeled_edges_trac = self.G.get_node_in_labeled_edges(action_node, 'trigger-action')
+                    action_node_in_labeled_edges_trac = self.G.get_node_in_labeled_edges(action_node, 'trigger_action')
                     if action_node_in_labeled_edges_trac:
                         subgraph.extend(action_node_in_labeled_edges_trac)
                     else:
