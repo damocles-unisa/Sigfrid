@@ -4,6 +4,11 @@ This repository contains the supplementary material for the paper "LLM-Powered S
 
 This material comprises the source codes useful for the repeatability of the experiments.
 
+# Creators
+
+Gaetano Cimino (gcimino@unisa.it) and Vincenzo Deufemia (deufemia@unisa.it)
+
+University of Salerno
 
 # Overview
 
