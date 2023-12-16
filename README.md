@@ -16,7 +16,14 @@ In this paper, we present an unsupervised, platform-agnostic tool called <b>S</b
 
 # SIGFRID architecture
 
+When presented with a set of trigger-action rules derived from various TAPs integrated within an IoT ecosystem, SIGFRID represents the interactions between these rules by constructing a SIG. This construction
+process involves the use of LLMs queried using distinct prompts tailored for the TAP domain via a prompt engineering methodology. Subsequently, the Inter-Rule Interference Vulnerabilities Detector is responsible for examining the SIG and presenting the results to the user, enabling informed decisionmaking. In the following, we introduce the SIG definition and the various phases of the SIGFRID detection process.
 
+<p align="center">
+  <img width="500" height="270"
+    src="https://github.com/damocles-unisa/Sigfrid/blob/main/SIGFRID_architecture.png"
+  >
+</p>
 
 
 
