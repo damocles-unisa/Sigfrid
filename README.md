@@ -17,7 +17,7 @@ In this paper, we present an unsupervised, platform-agnostic tool called <b>S</b
 # SIGFRID architecture
 
 When presented with a set of trigger-action rules derived from various Trigger-Action Platforms integrated within an IoT ecosystem, SIGFRID represents the interactions between these rules by constructing a SIG. This construction
-process involves the use of LLMs queried using distinct prompts tailored for the TAP domain via a prompt engineering methodology. Subsequently, the Inter-Rule Interference Vulnerabilities Detector is responsible for examining the SIG and presenting the results to the user, enabling informed decision-making. 
+process involves the use of LLMs queried using distinct prompts tailored for the TAP domain via <b>T</b>rigger <b>A</b>ction platform <b>P</b>rompt <b>EN</b>gineer (TAPEN), a prompt engineering methodology combining auto and manual prompt editing to streamline crafting effective instructions for querying LLMs in TAP-oriented tasks. Subsequently, the Inter-Rule Interference Vulnerabilities Detector is responsible for examining the SIG and presenting the results to the user, enabling informed decision-making. 
 
 <p align="center">
   <img width="600" height="270"
@@ -81,3 +81,38 @@ and explain why. Please do not consider conflicts in terms of resources.
 
 
 Ultimately, the extraction of interferences is executed through the application of methods encapsulated within the module named <b>search_engine.py</b>.
+
+# Comparative Analysis
+
+To evaluate the effectiveness of the TAPEN methodology, we assessed SIGFRID's performance under different prompting strategies. Specifically, we compared TAPEN with two baseline prompting strategies that employ manually crafted prompts: Zero-Shot (ZS) prompting and Few-Shot (FS) prompting. The templates utilized during experimental procedures for both ZS and FS are delineated as follows:
+
+<table align="center">
+    <tr> <td align="center"><b>t<sub>S(T)</sub></b></td>
+     <td align="center">Is the activation of trigger event [X] dependent on system element [Y]?
+</td>
+    </tr>
+    <tr> <td align="center"><b>t<sub>S(A)</sub></td>
+        <td align="center">Does the execution of action event [X] result in a change to the system element [Y]?
+</td>
+    </tr>
+    <tr> <td align="center"><b>t<sub>RC</sub></td>
+        <td align="center">Does rule chaining interference arise between events [X] and [Y], such that the interfence manifests when [Y] is activated due to the execution of [X]?
+</td>
+    </tr>
+<tr> <td align="center"><b>t<sub>AD</sub></td>
+        <td align="center"> Do events [X] and [Y] refer to the same event?
+</td>
+    </tr>
+<tr> <td align="center"><b>t<sub>TB</sub></td>
+        <td align="center"> Does trigger block interference arise between events [X] and [Y], such that the interfence manifests when [Y] is blocked due to the execution of [X]?
+</td>
+    </tr>
+<tr> <td align="center"><b>t<sub>AB</sub></td>
+        <td align="center"> Does action block interference arise between events [X] and [Y], such that the interfence manifests when [Y] is blocked due to the execution of [X]?
+</td>
+    </tr>
+  <tr> <td align="center"><b>t<sub>AC</sub></td>
+        <td align="center"> Does action conflict interference arise between events [X] and [Y], such that the interfence manifests when the execution of [Y] is in conflict with the execution of [X]?
+</td>
+    </tr>  
+</table>
